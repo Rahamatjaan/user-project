@@ -1,0 +1,13 @@
+---
+- name: create user question
+  hosts: all
+  vars_files:
+    - user_list.yml
+  tasks: 
+        - name: creating users
+          user:
+            name: "{{ item }}"
+            state: present
+          loop:
+            - developer
+  
